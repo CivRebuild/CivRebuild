@@ -20,7 +20,7 @@
 __version__ = "$Revision: 1.4 $"
 # $Source: /usr/local/cvsroot/Civ4lerts/src/main/python/CvCustomEventManager.py,v $
 
-import CvEventManager
+from Python import CvEventManager
 
 # --------- Better BTS AI mod (1/2) -------------
 from Development import AIAutoPlay

@@ -26,7 +26,7 @@ from CvPythonExtensions import (
     CyPopupInfo,
 )
 
-import PyHelpers
+from Python import PyHelpers
 
 
 gc = CyGlobalContext()

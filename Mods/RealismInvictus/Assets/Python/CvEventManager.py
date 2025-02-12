@@ -10,24 +10,24 @@
 
 from CvPythonExtensions import *
 
-import CvUtil
-import CvAdvisorUtils
-import CvCameraControls
-import CvDebugTools
-import PyHelpers
+from Python import CvUtil
+from Python import CvAdvisorUtils
+from Python import CvCameraControls
+from Python import CvDebugTools
+from Python import PyHelpers
 
-from EntryPoints import CvScreensInterface
-from pyHelper import Popup as PyPopup
+from Python.EntryPoints import CvScreensInterface
+from Python.pyHelper import Popup as PyPopup
 #from Screens import CvTechChooser
-import CvTopCivs
+from Python import CvTopCivs
 
 ## Platy Builder ##
-from Screens.PlatyBuilder import WBCityEditScreen
-from Screens.PlatyBuilder import WBUnitScreen
-from Screens.PlatyBuilder import WBPlayerScreen
-from Screens.PlatyBuilder import WBGameDataScreen
-from Screens.PlatyBuilder import WBPlotScreen
-from Screens.PlatyBuilder import CvPlatyBuilderScreen
+from Python.Screens.PlatyBuilder import WBCityEditScreen
+from Python.Screens.PlatyBuilder import WBUnitScreen
+from Python.Screens.PlatyBuilder import WBPlayerScreen
+from Python.Screens.PlatyBuilder import WBGameDataScreen
+from Python.Screens.PlatyBuilder import WBPlotScreen
+from Python.Screens.PlatyBuilder import CvPlatyBuilderScreen
 ## Platy Builder ##
 ## Dynamic City Naming ##
 if not CyGlobalContext().getGame().isOption(GameOptionTypes.GAMEOPTION_NO_CITY_NAMING):

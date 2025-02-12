@@ -1,4 +1,4 @@
 
-from CvGameCoreDLL import *
 from CvPythonEngine import *
+from CvGameCoreDLL import *
 

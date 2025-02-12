@@ -2,10 +2,9 @@
 ## Copyright Firaxis Games 2005
 
 from CvPythonExtensions import *
-from CvPythonEngine import * 
 
 #import Info as PyInfo
-import CvUtil
+from Python import CvUtil
 
 gc = CyGlobalContext()
 
