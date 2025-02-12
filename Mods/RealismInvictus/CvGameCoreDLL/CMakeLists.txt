@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 
-project(CvGameCoreDLL.2012 CXX)
+project(CvGameCoreDLL.RI CXX)
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.

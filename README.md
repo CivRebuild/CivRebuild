@@ -10,6 +10,6 @@ PYTHONPATH
 
 Need add to PYTHONPATH (on IDE):
 * CoreEngine
-* Assets/Python
-* Mods/<mod name>/Assets/Python
+* Assets
+* Mods/<mod name>/Assets
 
