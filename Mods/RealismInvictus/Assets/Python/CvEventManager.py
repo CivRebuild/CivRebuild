@@ -34,19 +34,19 @@ if not CyGlobalContext().getGame().isOption(GameOptionTypes.GAMEOPTION_NO_CITY_N
     from Components import DynamicCityNaming
 ## Dynamic City Naming ##
 ## Stored Data Handling ##
-from StoredData import sd
+from Python.StoredData import sd
 ## Stored Data Handling ##
 ## Revolutions ##
-from Components import Revolutions
+from Python.Components import Revolutions
 ## Revolutions ##
-from Components import DynamicCivNaming
+from Python.Components import DynamicCivNaming
 ## Barbarian Civ ##
-from Components import BarbCiv
+from Python.Components import BarbCiv
 ## Barbarian Civ ##
 ## Influence Driven War ##
-from Components import IDW
+from Python.Components import IDW
 ## Influence Driven War ##
-import Consts as con
+from Python import Consts as con
 
 gc = CyGlobalContext()
 localText = CyTranslator()

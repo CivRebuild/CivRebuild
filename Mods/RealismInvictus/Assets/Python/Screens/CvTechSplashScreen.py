@@ -1,0 +1,1 @@
+../../../../../Assets/Python/Screens/CvTechSplashScreen.py

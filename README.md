@@ -10,6 +10,5 @@ PYTHONPATH
 
 Need add to PYTHONPATH (on IDE):
 * CoreEngine
-* Assets
-* Mods/<mod name>/Assets
+* Assets (For BtS) or Mods/<mod name>/Assets (For Mod)
 
