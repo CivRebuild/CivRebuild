@@ -1589,7 +1589,7 @@ class CyGTabCtrl:
         pass
 
     @monitor
-    def attachExpandSpacer(self, self, szParent):
+    def attachExpandSpacer(self, szParent):
         pass
 
     @monitor

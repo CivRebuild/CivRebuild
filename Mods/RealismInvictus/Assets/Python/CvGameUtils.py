@@ -8,7 +8,7 @@ import CvUtil
 from CvPythonExtensions import *
 from CvPythonEngine import *
 
-from EntryPoints import CvEventInterface
+import CvEventInterface
 import Consts as con
 
 ## Revolutions ##
