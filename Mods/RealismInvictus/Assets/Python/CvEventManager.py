@@ -10,43 +10,43 @@
 
 from CvPythonExtensions import *
 
-from Python import CvUtil
-from Python import CvAdvisorUtils
-from Python import CvCameraControls
-from Python import CvDebugTools
-from Python import PyHelpers
+import CvUtil
+import CvAdvisorUtils
+import CvCameraControls
+import CvDebugTools
+import PyHelpers
 
-from Python.EntryPoints import CvScreensInterface
-from Python.pyHelper import Popup as PyPopup
+import CvScreensInterface
+import Popup as PyPopup
 #from Screens import CvTechChooser
-from Python import CvTopCivs
+# import CvTopCivs #RETURN!!!!!!
 
 ## Platy Builder ##
-from Python.Screens.PlatyBuilder import WBCityEditScreen
-from Python.Screens.PlatyBuilder import WBUnitScreen
-from Python.Screens.PlatyBuilder import WBPlayerScreen
-from Python.Screens.PlatyBuilder import WBGameDataScreen
-from Python.Screens.PlatyBuilder import WBPlotScreen
-from Python.Screens.PlatyBuilder import CvPlatyBuilderScreen
+import WBCityEditScreen
+import WBUnitScreen
+import WBPlayerScreen
+import WBGameDataScreen
+import WBPlotScreen
+import CvPlatyBuilderScreen
 ## Platy Builder ##
 ## Dynamic City Naming ##
-if not CyGlobalContext().getGame().isOption(GameOptionTypes.GAMEOPTION_NO_CITY_NAMING):
-    from Components import DynamicCityNaming
+# if not CyGlobalContext().getGame().isOption(GameOptionTypes.GAMEOPTION_NO_CITY_NAMING):
+    # import DynamicCityNaming #RETURN!!!!!
 ## Dynamic City Naming ##
 ## Stored Data Handling ##
-from Python.StoredData import sd
+from StoredData import sd
 ## Stored Data Handling ##
 ## Revolutions ##
-from Python.Components import Revolutions
+import Revolutions
 ## Revolutions ##
-from Python.Components import DynamicCivNaming
+import DynamicCivNaming
 ## Barbarian Civ ##
-from Python.Components import BarbCiv
+import BarbCiv
 ## Barbarian Civ ##
 ## Influence Driven War ##
-from Python.Components import IDW
+import IDW
 ## Influence Driven War ##
-from Python import Consts as con
+import Consts as con
 
 gc = CyGlobalContext()
 localText = CyTranslator()

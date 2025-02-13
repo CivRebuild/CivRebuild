@@ -8,7 +8,9 @@ Project to modern rebuild Civ4 CvGameCoreDLL & Assets/Python
 PYTHONPATH
 ----------
 
-Need add to PYTHONPATH (on IDE):
-* CoreEngine
-* Assets (For BtS) or Mods/<mod name>/Assets (For Mod)
+Need generate PYTHONPATH and add This in IDE:
+* For BtS - cd Assets and run ``python3 create_pythonpath.py``
+* For Mods - cd Mods/RealismInvictus/Assets and run ``python3 create_pythonpath.py`` 
+
+Return: PYTHONPATH List & String
 
