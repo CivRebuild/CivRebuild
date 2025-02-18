@@ -2,6 +2,9 @@
 *.bak
 
 
+#CvGameCoreDLL/CMakeLists.txt.user
+
+
 CvGameCoreDLL/x64/lin/Debug/*
 !CvGameCoreDLL/x64/Debug/.lock
 
@@ -26,6 +29,9 @@ CvGameCoreDLL/x64/win/Release-light/*
 
 CvGameCoreDLL/x64/win/Release-symbols/*
 !CvGameCoreDLL/x64/win/Release-symbols/.lock
+
+
+#Mods/RealismInvictus/CvGameCoreDLL/CMakeLists.txt.user
 
 
 Mods/RealismInvictus/CvGameCoreDLL/x64/lin/Debug/*

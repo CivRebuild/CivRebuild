@@ -49,4 +49,5 @@ from CvPythonExtensions import *
 
 #print("{sx}\nImport CvPythonExtensions\n{sx}".format(sx="-" * 20))
 
+import CvGameUtils
 #import CvEventManager
