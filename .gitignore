@@ -2,6 +2,9 @@
 *.bak
 
 
+# BtS
+
+
 CvGameCoreDLL/CMakeLists.txt.user
 
 
@@ -31,6 +34,9 @@ CvGameCoreDLL/x64/win/Release-symbols/*
 !CvGameCoreDLL/x64/win/Release-symbols/.lock
 
 
+# Mod RealismInvictus
+
+
 Mods/RealismInvictus/CvGameCoreDLL/CMakeLists.txt.user
 
 
@@ -58,4 +64,36 @@ Mods/RealismInvictus/CvGameCoreDLL/x64/win/Release-light/*
 
 Mods/RealismInvictus/CvGameCoreDLL/x64/win/Release-symbols/*
 !Mods/RealismInvictus/CvGameCoreDLL/x64/win/Release-symbols/.lock
+
+
+# Mod PaxLibertatum
+
+
+Mods/PaxLibertatum/CvGameCoreDLL/CMakeLists.txt.user
+
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Debug/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Debug/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release-light/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release-light/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release-symbols/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/lin/Release-symbols/.lock
+
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Debug/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Debug/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release-light/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release-light/.lock
+
+Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release-symbols/*
+!Mods/PaxLibertatum/CvGameCoreDLL/x64/win/Release-symbols/.lock
 

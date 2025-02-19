@@ -3,7 +3,8 @@ import os
 import sys
 import doctest
 
-sys.path.append(os.path.abspath("../CoreEngine"))
+os.environ["Civ_CONFIG_mod"] = "PaxLibertatum"
+sys.path.append(os.path.abspath("../../../CoreEngine"))
 
 print("{sx}\nTEST Import CvPythonExtensions\n{sx}".format(sx="-" * 20))
 
@@ -12,3 +13,4 @@ from CvPythonExtensions import *
 print("{sx}\nTEST Import CvGameUtils\n{sx}".format(sx="-" * 20))
 
 import CvGameUtils
+
