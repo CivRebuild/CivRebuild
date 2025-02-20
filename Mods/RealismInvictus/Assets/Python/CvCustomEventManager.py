@@ -23,9 +23,9 @@ __version__ = "$Revision: 1.4 $"
 from Python import CvEventManager
 
 # --------- Better BTS AI mod (1/2) -------------
-from Development import AIAutoPlay
-from Development import ChangePlayer
-from Development import Tester
+import AIAutoPlay
+import ChangePlayer
+import Tester
 
 
 class CvCustomEventManager(CvEventManager.CvEventManager, object):
