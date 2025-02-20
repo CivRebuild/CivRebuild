@@ -143,9 +143,11 @@ struct POINT {
 #else
 #define DllExport   __declspec( dllexport )
 #endif
+
 //
 // GameBryo
 //
+
 class NiColor
 {
 public:
@@ -172,28 +174,35 @@ public:
     NiPoint3() {}
     NiPoint3(float fx, float fy, float fz) : x(fx),y(fy),z(fz) {}
 
-    bool operator== (const NiPoint3& pt) const
+    //bool NiPoint3::operator== (const NiPoint3& pt) const //PORT OLD
+    bool operator== (const NiPoint3& pt) const //PORT NEW
     {	return (x == pt.x && y == pt.y && z == pt.z);	}
 
-    inline NiPoint3 operator+ (const NiPoint3& pt) const
+    //inline NiPoint3 NiPoint3::operator+ (const NiPoint3& pt) const //PORT OLD
+    inline NiPoint3 operator+ (const NiPoint3& pt) const //PORT NEW
     {	return NiPoint3(x+pt.x,y+pt.y,z+pt.z);	}
 
-    inline NiPoint3 operator- (const NiPoint3& pt) const
+    //inline NiPoint3 NiPoint3::operator- (const NiPoint3& pt) const //PORT OLD
+    inline NiPoint3 operator- (const NiPoint3& pt) const //PORT NEW
     {	return NiPoint3(x-pt.x,y-pt.y,z-pt.z);	}
 
-    inline float operator* (const NiPoint3& pt) const
+    //inline float NiPoint3::operator* (const NiPoint3& pt) const //PORT OLD
+    inline float operator* (const NiPoint3& pt) const //PORT NEW
     {	return x*pt.x+y*pt.y+z*pt.z;	}
 
-    inline NiPoint3 operator* (float fScalar) const
+    //inline NiPoint3 NiPoint3::operator* (float fScalar) const //PORT OLD
+    inline NiPoint3 operator* (float fScalar) const //PORT NEW
     {	return NiPoint3(fScalar*x,fScalar*y,fScalar*z);	}
 
-    inline NiPoint3 operator/ (float fScalar) const
+    //inline NiPoint3 NiPoint3::operator/ (float fScalar) const //PORT OLD
+    inline NiPoint3 operator/ (float fScalar) const //PORT NEW
     {
         float fInvScalar = 1.0f/fScalar;
         return NiPoint3(fInvScalar*x,fInvScalar*y,fInvScalar*z);
     }
 
-    inline NiPoint3 operator- () const
+    //inline NiPoint3 NiPoint3::operator- () const //PORT OLD
+    inline NiPoint3 operator- () const //PORT NEW
     {	return NiPoint3(-x,-y,-z);	}
 
     inline float Length() const
@@ -230,11 +239,10 @@ namespace NiAnimationKey
     };
 };
 
-
 #if defined(__GNUC__)
-typedef unsigned int qword; //???
+typedef unsigned int qword; //PORT NEW
 #else
-typedef unsigned __int64 qword;
+typedef unsigned __int64 qword; //PORT OLD
 #endif
 typedef unsigned char    byte;
 typedef unsigned short   word;
@@ -264,6 +272,7 @@ typedef wchar_t          wchar;
 #define LIMIT_RANGE(low, value, high) value = (value < low ? low : (value > high ? high : value));
 #define M_PI       3.14159265358979323846
 #define fM_PI		3.141592654f		//!< Pi (float)
+
 
 __forceinline DWORD FtoDW( float f ) { return *(DWORD*)&f; } //PORT OLD?
 //# define FORCE_INLINE DWORD FtoDW( float f ) { return *(DWORD*)&f; } //PORT NEW?
