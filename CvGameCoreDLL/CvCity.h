@@ -5,7 +5,9 @@
 #ifndef CIV4_CITY_H
 #define CIV4_CITY_H
 
+#include "CvDepends.h"
 #include "CvDLLEntity.h"
+#include "CvStructs.h"
 #include "LinkedList.h"
 
 class CvPlot;
