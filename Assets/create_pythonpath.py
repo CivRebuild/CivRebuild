@@ -1,47 +1,16 @@
 
 import os
-from pathlib import Path
+import sys
 
-build_dirs = [
-    "Debug",
-    "Release-symbols",
-    "Release-light",
-    "Release",
-]
+sys.path.append(os.path.abspath("../CoreEngine"))
+from core_paths import CorePaths
 
-core_dir = os.path.abspath("../CoreEngine")
-python_dirs = [
-    Path(os.path.abspath("Python")),
-]
-
-new_pythonpath = []
-
-#  add core dir
-new_pythonpath.append(os.path.abspath(core_dir))
-
-# add CvGameCoreDLL build dirs
-dll_path = os.path.abspath("../CvGameCoreDLL")
-for _dir in build_dirs:
-    new_pythonpath.append(os.path.abspath(os.path.join(dll_path, "x64", "lin", _dir)))
-    new_pythonpath.append(os.path.abspath(os.path.join(dll_path, "x64", "win", _dir)))
-
-# add python dirs
-for py_dir in python_dirs:
-    new_pythonpath.append(str(py_dir.parents[0]))
-    new_pythonpath.append(str(py_dir))
-
-    mod_python_paths = [
-       os.path.abspath(str(path))
-        for path
-        in py_dir.rglob("*")
-        if path.is_dir() and path.name != "__pycache__"
-        ]
-
-    new_pythonpath += mod_python_paths
+cor_pat = CorePaths()
+pythonpath = cor_pat.get_pythonpath()
 
 print("{sx}\nPITNONPATH List\n{sx}".format(sx="-" * 20))
-for i in new_pythonpath:
+for i in pythonpath:
     print(i)
 
 print("{sx}\nPITNONPATH String\n{sx}".format(sx="-" * 20))
-print(":".join(new_pythonpath))
+print(":".join(pythonpath))
