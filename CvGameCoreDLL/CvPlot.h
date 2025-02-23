@@ -5,11 +5,13 @@
 #ifndef CIV4_PLOT_H
 #define CIV4_PLOT_H
 
-//#include "CvStructs.h"
+#include "CvStructs.h"
 #include "LinkedList.h"
 #include <bitset>
 
+#if not defined(__GNUC__)
 #pragma warning( disable: 4251 )		// needs to have dll-interface to be used by clients of class
+#endif
 
 class CvArea;
 class CvMap;

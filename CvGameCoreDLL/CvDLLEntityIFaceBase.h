@@ -3,7 +3,9 @@
 #ifndef CvDLLEntityIFaceBase_h
 #define CvDLLEntityIFaceBase_h
 
-#pragma warning(disable:4100) 
+#if not defined(__GNUC__)
+#pragma warning(disable:4100)
+#endif
 
 //#include "CvGameCoreDLL.h"
 #include "CvDepends.h"

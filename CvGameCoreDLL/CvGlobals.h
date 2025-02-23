@@ -11,6 +11,11 @@
 // All globals and global types should be contained in this class
 //
 
+#include "CvDepends.h"
+#include "CvEnums.h"
+#include "FDataStreamBase.h"
+#include "CvString.h"
+
 class FProfiler;
 class CvDLLUtilityIFaceBase;
 class CvRandom;
@@ -779,8 +784,9 @@ public:
 
 	////////////// END DEFINES //////////////////
 
-	DllExport void setDLLIFace(CvDLLUtilityIFaceBase* pDll);
-#ifdef _USRDLL
+    DllExport void setDLLIFace(CvDLLUtilityIFaceBase* pDll);
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	CvDLLUtilityIFaceBase* getDLLIFace() { return m_pDLL; }		// inlined for perf reasons, do not use outside of dll
 #endif
 	DllExport CvDLLUtilityIFaceBase* getDLLIFaceNonInl();
@@ -947,8 +953,12 @@ protected:
 	Globals loaded from XML
 	************************************************************************************************************************/
 
-	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
-	typedef stdext::hash_map<std::string /* type string */, int /* info index */> InfosMap;
+    // all type strings are upper case and are kept in this hash map for fast lookup, Moose
+#if defined(__GNUC__)
+    typedef std::unordered_map<std::string /* type string */, int /* info index */> InfosMap;
+#else
+    typedef stdext::hash_map<std::string /* type string */, int /* info index */> InfosMap;
+#endif
 	InfosMap m_infosMap;
 	std::vector<std::vector<CvInfoBase *> *> m_aInfoVectors;
 
@@ -1063,8 +1073,12 @@ protected:
 	// GLOBAL TYPES
 	//////////////////////////////////////////////////////////////////////////
 
-	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
-	typedef stdext::hash_map<std::string /* type string */, int /*enum value */> TypesMap;
+    // all type strings are upper case and are kept in this hash map for fast lookup, Moose
+#if defined(__GNUC__)
+    typedef std::unordered_map<std::string /* type string */, int /*enum value */> TypesMap;
+#else
+    typedef stdext::hash_map<std::string /* type string */, int /*enum value */> TypesMap;
+#endif
 	TypesMap m_typesMap;
 
 	// XXX These are duplicates and are kept for enumeration convenience - most could be removed, Moose

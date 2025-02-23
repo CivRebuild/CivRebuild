@@ -4,7 +4,12 @@
 #define CvString_h
 
 #include <string>
+#include "CvDepends.h"
+
+#if not defined(__GNUC__)
 #pragma warning( disable: 4251 )		// needs to have dll-interface to be used by clients of class
+#endif
+
 
 //
 // simple string classes, based on stl, but with a few helpers
@@ -25,11 +30,13 @@ public:
 	CvWString(const char* s) { Copy(s); 	}
 	CvWString(const wchar* s) { if (s) *this = s; }
 //	CvWString(const __wchar_t* s) { if (s) *this = s; }
-	CvWString(const std::wstring& s) { assign(s.c_str()); }
+    CvWString(const std::wstring& s) { assign(s.c_str()); }
+#if not defined(__GNUC__)
 #ifndef _USRDLL
 	// FString conversion, if not in the DLL
 	CvWString(const FStringA& s) { Copy(s.GetCString()); }
 	CvWString(const FStringW& s) { assign(s.GetCString()); }
+#endif
 #endif
 	~CvWString() {}
 
@@ -41,8 +48,12 @@ public:
 			if (iLen)
 			{
 				wchar *w = new wchar[iLen+1];
-				swprintf(w, L"%S", s);	// convert
-				assign(w);
+                #if defined(__GNUC__)
+                wprintf(w, L"%S", s);	// convert
+                #else
+                swprintf(w, L"%S", s);	// convert
+                #endif
+                assign(w);
 				delete [] w;
 			}
 		}
@@ -61,11 +72,13 @@ public:
 	const CvWString& operator=( const wchar* s) { if (s) assign(s); else clear();	return *this; }	
 	const CvWString& operator=( const std::wstring& s) { assign(s.c_str());	return *this; }	
 	const CvWString& operator=( const std::string& w) { Copy(w.c_str());	return *this; }	
-	const CvWString& operator=( const CvWString& w) { assign(w.c_str());	return *this; }	
+    const CvWString& operator=( const CvWString& w) { assign(w.c_str());	return *this; }
+#if not defined(__GNUC__)
 #ifndef _USRDLL
 	// FString conversion, if not in the DLL
 	const CvWString& operator=( const FStringW& s) { assign(s.GetCString());	return *this; }	
 	const CvWString& operator=( const FStringA& w) { Copy(w.GetCString());	return *this; }	
+#endif
 #endif
 	const CvWString& operator=( const char* w) { Copy(w);	return *this; }	
 
@@ -240,9 +253,11 @@ public:
 	// FString compatibility
 	bool IsEmpty() const { return empty();	}
 	const char* GetCString() const 	{ return c_str(); }							// convert
-	int CompareNoCase( const char* lpsz ) const { return stricmp(lpsz, c_str()); }
-	int CompareNoCase( const char* lpsz, int iLength ) const { return strnicmp(lpsz, c_str(), iLength);  }
-	void Format( LPCSTR lpszFormat, ... );
+    //int CompareNoCase( const char* lpsz ) const { return stricmp(lpsz, c_str()); } //PORT OLD
+    int CompareNoCase( const char* lpsz ) const { return _stricmp(lpsz, c_str()); } //PORT NEW
+    //int CompareNoCase( const char* lpsz, int iLength ) const { return strnicmp(lpsz, c_str(), iLength);  } //PORT OLD
+    int CompareNoCase( const char* lpsz, int iLength ) const { return _strnicmp(lpsz, c_str(), iLength);  } //PORT NEW
+    void Format( LPCSTR lpszFormat, ... );
 	int GetLength() const { return size(); }
 	int Replace( char chOld, char chNew );
 
@@ -312,8 +327,12 @@ inline bool CvString::formatv(std::string & out, const char * fmt, va_list args)
 
 	do
 	{
-		int maxlen = 2047+2048*attempts;
-		len = _vsnprintf(pbuf,maxlen,fmt,args);
+        int maxlen = 2047+2048*attempts;
+        #if defined(__GNUC__)
+        len = vsnprintf(pbuf,maxlen,fmt,args);
+        #else
+        len = _vsnprintf(pbuf,maxlen,fmt,args);
+        #endif
 		attempts++;
 		success = (len>=0 && len<=maxlen);
 		if (!success)
@@ -356,7 +375,11 @@ inline bool CvWString::formatv(std::wstring & out, const wchar * fmt, va_list ar
 	do
 	{
 		int maxlen = 2047+2048*attempts;
-		len = _vsnwprintf(pbuf,maxlen,fmt,args);
+        #if defined(__GNUC__)
+        len = vswprintf(pbuf,maxlen,fmt,args);
+        #else
+        len = _vsnwprintf(pbuf,maxlen,fmt,args);
+        #endif
 		attempts++;
 		success = (len>=0 && len<=maxlen);
 		if (!success)

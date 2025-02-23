@@ -326,11 +326,11 @@ inline bool CvString::formatv(std::string & out, const char * fmt, va_list args)
 	do
 	{
 		int maxlen = 2047+2048*attempts;
-#if defined(__GNUC__)
+        #if defined(__GNUC__)
         len = vsnprintf(pbuf,maxlen,fmt,args);
-#else
+        #else
         len = _vsnprintf(pbuf,maxlen,fmt,args);
-#endif
+        #endif
 		attempts++;
 		success = (len>=0 && len<=maxlen);
 		if (!success)
@@ -373,11 +373,11 @@ inline bool CvWString::formatv(std::wstring & out, const wchar * fmt, va_list ar
 	do
 	{
 		int maxlen = 2047+2048*attempts;
-#if defined(__GNUC__)
+        #if defined(__GNUC__)
         len = vswprintf(pbuf,maxlen,fmt,args);
-#else
+        #else
         len = _vsnwprintf(pbuf,maxlen,fmt,args);
-#endif
+        #endif
 		attempts++;
 		success = (len>=0 && len<=maxlen);
 		if (!success)

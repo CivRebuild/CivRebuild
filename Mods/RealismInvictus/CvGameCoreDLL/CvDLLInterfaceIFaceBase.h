@@ -7,7 +7,6 @@
 // abstract class containing CvInterface functions that the DLL needs
 //
 
-
 //#include "CvGameCoreDLL.h"
 #include "CvDepends.h"
 #include "CvStructs.h"

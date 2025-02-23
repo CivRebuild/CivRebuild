@@ -6,6 +6,9 @@
 // Creator- Mustafa Thamer
 //
 
+#include "CvDepends.h"
+#include "CvEnums.h"
+
 class CvUnit;
 class CvCity;
 class CvPlot;

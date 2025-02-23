@@ -5,6 +5,8 @@
 #ifndef CIV4_FRACTAL_H
 #define CIV4_FRACTAL_H
 
+#include "CvDepends.h"
+
 class CvRandom;
 class CvFractal
 {
