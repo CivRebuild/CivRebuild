@@ -15,8 +15,10 @@
 #ifndef CIV4_GAME_TEXT_MGR_H
 #define CIV4_GAME_TEXT_MGR_H
 
-#include "CvInfos.h"
 //#include "CvEnums.h"
+#include "CvInfos.h"
+#include "LinkedList.h"
+
 
 #pragma warning( disable: 4251 )	// needs to have dll-interface to be used by clients of class
 

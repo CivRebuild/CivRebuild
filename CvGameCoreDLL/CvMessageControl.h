@@ -1,6 +1,9 @@
 #ifndef CV_MESSAGE_CONTROL
 #define CV_MESSAGE_CONTROL
 
+#include "CvDepends.h"
+#include "CvEnums.h"
+
 class CvMessageControl
 {
 public:

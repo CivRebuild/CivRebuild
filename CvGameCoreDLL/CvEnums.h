@@ -76,7 +76,8 @@ enum DirectionTypes					// Exposed to Python
 	DIRECTION_WEST,
 	DIRECTION_NORTHWEST,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_DIRECTION_TYPES,
 #endif
 
@@ -99,7 +100,8 @@ enum CardinalDirectionTypes			// Exposed to Python
 	CARDINALDIRECTION_SOUTH,
 	CARDINALDIRECTION_WEST,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_CARDINALDIRECTION_TYPES
 #endif
 };
@@ -129,7 +131,8 @@ enum WrapDirection
 	WRAP_UP,
 	WRAP_DOWN,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_WRAP_DIRECTIONS,
 #endif
 
@@ -248,7 +251,8 @@ enum InterfaceModeTypes			// Exposed to Python
 	INTERFACEMODE_PYTHON_PICK_PLOT,
 	INTERFACEMODE_SAVE_PLOT_NIFS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_INTERFACEMODE_TYPES
 #endif
 };
@@ -265,7 +269,8 @@ enum InterfaceMessageTypes	// Exposed to Python
 	MESSAGE_TYPE_COMBAT_MESSAGE,
 	MESSAGE_TYPE_QUEST,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_INTERFACE_MESSAGE_TYPES
 #endif
 };
@@ -297,7 +302,8 @@ enum MinimapModeTypes		// Exposed to Python
 	MINIMAPMODE_REPLAY,
 	MINIMAPMODE_MILITARY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_MINIMAPMODE_TYPES
 #endif
 };
@@ -309,7 +315,8 @@ enum EngineDirtyBits		// Exposed to Python
 	MinimapTexture_DIRTY_BIT,
 	CultureBorders_DIRTY_BIT,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_ENGINE_DIRTY_BITS
 #endif
 };
@@ -352,7 +359,8 @@ enum InterfaceDirtyBits // Exposed to Python
 	Espionage_Advisor_DIRTY_BIT,
 	Advanced_Start_DIRTY_BIT,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_INTERFACE_DIRTY_BITS
 #endif
 };
@@ -365,7 +373,8 @@ enum CityTabTypes			// Exposed to Python
 	CITYTAB_BUILDINGS,
 	CITYTAB_WONDERS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_CITYTAB_TYPES
 #endif
 };
@@ -541,7 +550,8 @@ enum WidgetTypes					// Exposed to Python
 	WIDGET_GLOBELAYER_OPTION,
 	WIDGET_GLOBELAYER_TOGGLE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_WIDGET_TYPES
 #endif
 };
@@ -585,7 +595,8 @@ enum ButtonPopupTypes			// Exposed to Python
 	BUTTONPOPUP_LAUNCH,
 	BUTTONPOPUP_FOUND_RELIGION,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_BUTTONPOPUP_TYPES
 #endif
 };
@@ -616,7 +627,8 @@ enum WorldSizeTypes				// Exposed to Python
 	WORLDSIZE_LARGE,
 	WORLDSIZE_HUGE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_WORLDSIZE_TYPES
 #endif
 };
@@ -653,7 +665,8 @@ enum PlotTypes							// Exposed to Python
 	PLOT_LAND,
 	PLOT_OCEAN,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_PLOT_TYPES
 #endif
 };
@@ -666,7 +679,8 @@ enum YieldTypes							// Exposed to Python
 	YIELD_PRODUCTION,
 	YIELD_COMMERCE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_YIELD_TYPES
 #endif
 };
@@ -680,7 +694,8 @@ enum CommerceTypes					// Exposed to Python
 	COMMERCE_CULTURE,
 	COMMERCE_ESPIONAGE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_COMMERCE_TYPES
 #endif
 };
@@ -729,7 +744,8 @@ enum GameOptionTypes				// Exposed to Python
 	GAMEOPTION_NO_EVENTS,
 	GAMEOPTION_NO_ESPIONAGE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GAMEOPTION_TYPES
 #endif
 };
@@ -744,7 +760,8 @@ enum MultiplayerOptionTypes		// Exposed to Python
 	MPOPTION_ANONYMOUS,
 	MPOPTION_TURN_TIMER,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_MPOPTION_TYPES
 #endif
 };
@@ -755,7 +772,8 @@ enum SpecialOptionTypes			// Exposed to Python
 
 	SPECIALOPTION_REPORT_STATS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_SPECIALOPTION_TYPES
 #endif
 };
@@ -787,7 +805,8 @@ enum PlayerOptionTypes			// Exposed to Python
 	PLAYEROPTION_MODDER_2,
 	PLAYEROPTION_MODDER_3,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_PLAYEROPTION_TYPES
 #endif
 };
@@ -810,7 +829,8 @@ enum GraphicOptionTypes			// Exposed to Python
 	GRAPHICOPTION_NO_MOVIES,
 	GRAPHICOPTION_CITY_RADIUS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GRAPHICOPTION_TYPES
 #endif
 };
@@ -827,7 +847,8 @@ enum ForceControlTypes			// Exposed to Python
 	FORCECONTROL_MAX_CITY_ELIMINATION,
 	FORCECONTROL_ADVANCED_START,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_FORCECONTROL_TYPES
 #endif
 };
@@ -927,7 +948,8 @@ enum FontSymbols					// Exposed to Python
 	OCCUPATION_CHAR,
 	POWER_CHAR,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	MAX_NUM_SYMBOLS
 #endif
 };
@@ -981,7 +1003,8 @@ enum CitySizeTypes				// Exposed to Python
 	CITYSIZE_MEDIUM,
 	CITYSIZE_LARGE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_CITYSIZE_TYPES
 #endif
 };
@@ -1011,7 +1034,8 @@ enum VoiceTargetTypes			// Exposed to Python
 	VOICETARGET_TEAM,
 	VOICETARGET_ALL,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_VOICETARGETS
 #endif
 };
@@ -1040,7 +1064,8 @@ enum OrderTypes					// Exposed to Python
 	ORDER_CREATE,
 	ORDER_MAINTAIN,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_ORDER_TYPES
 #endif
 };
@@ -1065,7 +1090,8 @@ enum TaskTypes				// Exposed to Python
 	TASK_CLEAR_RALLY_PLOT,
 	TASK_LIBERATE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_TASK_TYPES
 #endif
 };
@@ -1145,7 +1171,8 @@ enum InfoBarTypes				// Exposed to Python
 	INFOBAR_RATE_EXTRA,
 	INFOBAR_EMPTY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_INFOBAR_TYPES
 #endif
 };
@@ -1156,7 +1183,8 @@ enum HealthBarTypes			// Exposed to Python
 	HEALTHBAR_ALIVE_DEFEND,
 	HEALTHBAR_DEAD,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_HEALTHBAR_TYPES
 #endif
 };
@@ -1238,7 +1266,8 @@ enum DomainTypes			// Exposed to Python
 	DOMAIN_LAND,
 	DOMAIN_IMMOBILE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_DOMAIN_TYPES
 #endif
 };
@@ -1345,7 +1374,8 @@ enum ActivityTypes			// Exposed to Python
 	ACTIVITY_PATROL,
 	ACTIVITY_PLUNDER,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_ACTIVITY_TYPES
 #endif
 };
@@ -1360,7 +1390,8 @@ enum AutomateTypes			// Exposed to Python
 	AUTOMATE_EXPLORE,
 	AUTOMATE_RELIGION,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_AUTOMATE_TYPES
 #endif
 };
@@ -1419,7 +1450,8 @@ enum MissionTypes				// Exposed to Python
 	MISSION_MULTI_SELECT,
 	MISSION_MULTI_DESELECT,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_MISSION_TYPES
 #endif
 };
@@ -1473,7 +1505,8 @@ enum CommandTypes					// Exposed to Python
 	COMMAND_UNLOAD_ALL,
 	COMMAND_HOTKEY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_COMMAND_TYPES
 #endif
 };
@@ -1546,7 +1579,8 @@ enum ControlTypes					// Exposed to Python
 	CONTROL_ESPIONAGE_SCREEN,
 	CONTROL_FREE_COLONY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_CONTROL_TYPES
 #endif
 };
@@ -1633,7 +1667,8 @@ enum EndTurnButtonStates	// Exposed to Python
 	END_TURN_OVER_HIGHLIGHT,
 	END_TURN_OVER_DARK,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_END_TURN_STATES
 #endif
 };
@@ -1644,7 +1679,8 @@ enum FogOfWarModeTypes		// Exposed to Python
 	FOGOFWARMODE_UNEXPLORED,
 	FOGOFWARMODE_NOVIS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_FOGOFWARMODE_TYPES
 #endif
 };
@@ -1794,7 +1830,8 @@ enum FunctionTypes
 	FUNC_EULERKEY,	// = NiAnimationKey::EULERKEY,
 	FUNC_STEPKEY,	// = NiAnimationKey::STEPKEY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_FUNC_TYPES	// = NiAnimationKey::NUMKEYTYPES
 #endif
 };
@@ -1813,7 +1850,8 @@ enum TradeableItems						// Exposed to Python
 	TRADE_PERMANENT_ALLIANCE,
 	TRADE_PEACE_TREATY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_BASIC_ITEMS,
 
 	TRADE_TECHNOLOGIES = NUM_BASIC_ITEMS,
@@ -1829,7 +1867,8 @@ enum TradeableItems						// Exposed to Python
 	TRADE_CIVIC,
 	TRADE_RELIGION,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_TRADEABLE_HEADINGS,
 
 	NUM_TRADEABLE_ITEMS = NUM_TRADEABLE_HEADINGS,
@@ -1862,7 +1901,8 @@ enum DiploEventTypes					// Exposed to Python
 	DIPLOEVENT_TARGET_CITY,
 	DIPLOEVENT_MADE_DEMAND_VASSAL,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_DIPLOEVENT_TYPES
 #endif
 };
@@ -1880,7 +1920,8 @@ enum NetContactTypes					// Exposed to Python
 	NETCONTACT_ESTABLISHED,
 	NETCONTACT_BUSY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_NETCONTACT_TYPES
 #endif
 };
@@ -1971,7 +2012,8 @@ enum LeaderheadAction			// Exposed to Python
 	LEADERANIM_DISAGREE,		//!< The leaderhead makes a disagree gesture
 	LEADERANIM_AGREE,				//!< The leaderhead makes an agree gesture
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_LEADERANIM_TYPES			//!< The number of leaderhead event types
 #endif
 };
@@ -2037,7 +2079,8 @@ enum SaveGameTypes			// Exposed to Python
 	SAVEGAME_PBEM,
 	SAVEGAME_REPLAY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_SAVEGAME_TYPES
 #endif
 };
@@ -2047,7 +2090,8 @@ enum InitializationStates
 	INIT_OK,
 	INIT_FAILED,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_INIT_STATES
 #endif
 };
@@ -2070,7 +2114,8 @@ enum GameType				// Exposed to Python
 	GAME_PBEM_LOAD,
 	GAME_REPLAY,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GAMETYPES
 #endif
 };
@@ -2082,7 +2127,8 @@ enum GameMode				// Exposed to Python
 	GAMEMODE_NORMAL,
 	GAMEMODE_PITBOSS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GAMEMODES
 #endif
 };
@@ -2095,7 +2141,8 @@ enum GamePwdTypes
 	PWD_SCENARIO,
 	PWD_JOINGAME,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_PWDTYPES
 #endif
 };
@@ -2106,7 +2153,8 @@ enum SlotClaim
 	SLOTCLAIM_RESERVED,
 	SLOTCLAIM_ASSIGNED,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_SLOTCLAIMS
 #endif
 };
@@ -2202,7 +2250,8 @@ enum WorldBuilderPopupTypes			// Exposed to Python
 	WBPOPUP_IMPROVEMENT,
 	WBPOPUP_GAME,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_WBPOPUP
 #endif
 };
@@ -2403,7 +2452,8 @@ enum TabGroupTypes				// Exposed to Python
 	TABGROUP_AUDIO,
 	TABGROUP_CLOCK,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_TABGROUPS
 #endif
 };
@@ -2416,7 +2466,8 @@ enum ReplayMessageTypes		// Exposed to Python
 	REPLAY_MESSAGE_CITY_FOUNDED,
 	REPLAY_MESSAGE_PLOT_OWNER_CHANGE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_REPLAY_MESSAGE_TYPES
 #endif
 };
@@ -2485,7 +2536,8 @@ enum ActionSubTypes					// Exposed to Python
 	ACTIONSUBTYPE_AUTOMATE,
 	ACTIONSUBTYPE_MISSION,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_ACTIONSUBTYPES
 #endif
 };
@@ -2655,7 +2707,8 @@ enum GraphicLevelTypes		// Exposed to Python
 	GRAPHICLEVEL_LOW,
 	GRAPHICLEVEL_CURRENT,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GRAPHICLEVELS
 #endif
 };
@@ -2701,7 +2754,8 @@ enum GlobeLayerTypes
 	GLOBE_LAYER_RELIGION,
 	GLOBE_LAYER_CULTURE,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_GLOBE_LAYER_TYPES
 #endif
 };
@@ -2714,7 +2768,8 @@ enum GlobeLayerUnitOptionTypes
 	SHOW_ENEMIES,
 	SHOW_PLAYER_DOMESTICS,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_UNIT_OPTION_TYPES
 #endif
 };
@@ -2726,7 +2781,8 @@ enum GlobeLayerResourceOptionTypes
 	SHOW_HAPPY_RESOURCES,
 	SHOW_HEALTH_RESOURCES,
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	NUM_RESOURCE_OPTION_TYPES
 #endif
 };

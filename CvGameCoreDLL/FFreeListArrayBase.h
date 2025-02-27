@@ -17,6 +17,8 @@
 #define		FFREELISTARRAYBASE_H
 #pragma		once
 
+#include "CvDepends.h"
+
 namespace FFreeList
 {
 	enum

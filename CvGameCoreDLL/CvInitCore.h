@@ -5,7 +5,10 @@
 #ifndef CIV4_INITCORE_H
 #define CIV4_INITCORE_H
 
-//#include "CvEnums.h"
+#include "CvDepends.h"
+#include "CvEnums.h"
+#include "CvString.h"
+#include "FDataStreamBase.h"
 
 #define FASSERT_BOUNDS(lower,upper,index,fnString)\
 	if (index < lower)\

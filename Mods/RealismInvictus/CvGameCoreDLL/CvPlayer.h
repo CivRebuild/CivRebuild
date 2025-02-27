@@ -14,6 +14,7 @@
 #include "CvTalkingHeadMessage.h"
 #include "FFreeListTrashArray.h"
 
+
 class CvDiploParameters;
 class CvPopupInfo;
 class CvEventTriggerInfo;
@@ -22,10 +23,10 @@ class CvPlayerRecord; // K-Mod
 typedef std::list<CvTalkingHeadMessage> CvMessageQueue;
 typedef std::list<CvPopupInfo*> CvPopupQueue;
 typedef std::list<CvDiploParameters*> CvDiploQueue;
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
 typedef std::unordered_map<int, int> CvTurnScoreMap;
 typedef std::unordered_map<EventTypes, EventTriggeredData> CvEventMap;
-#else
+#else //PORT OLD
 typedef stdext::hash_map<int, int> CvTurnScoreMap;
 typedef stdext::hash_map<EventTypes, EventTriggeredData> CvEventMap;
 #endif

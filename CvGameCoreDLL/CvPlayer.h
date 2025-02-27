@@ -11,6 +11,8 @@
 #include "CvPlotGroup.h"
 #include "LinkedList.h"
 #include "CvTalkingHeadMessage.h"
+#include "FFreeListTrashArray.h"
+
 
 class CvDiploParameters;
 class CvPopupInfo;
@@ -19,8 +21,14 @@ class CvEventTriggerInfo;
 typedef std::list<CvTalkingHeadMessage> CvMessageQueue;
 typedef std::list<CvPopupInfo*> CvPopupQueue;
 typedef std::list<CvDiploParameters*> CvDiploQueue;
+#if defined(__GNUC__) //PORT NEW
+typedef std::unordered_map<int, int> CvTurnScoreMap;
+typedef std::unordered_map<EventTypes, EventTriggeredData> CvEventMap;
+#else //PORT OLD
 typedef stdext::hash_map<int, int> CvTurnScoreMap;
 typedef stdext::hash_map<EventTypes, EventTriggeredData> CvEventMap;
+#endif
+
 typedef std::vector< std::pair<UnitCombatTypes, PromotionTypes> > UnitCombatPromotionArray;
 typedef std::vector< std::pair<UnitClassTypes, PromotionTypes> > UnitClassPromotionArray;
 typedef std::vector< std::pair<CivilizationTypes, LeaderHeadTypes> > CivLeaderArray;

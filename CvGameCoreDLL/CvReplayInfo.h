@@ -3,7 +3,10 @@
 
 #pragma once
 
+#include "CvDepends.h"
 #include "CvEnums.h"
+#include "CvString.h"
+#include "FDataStreamBase.h"
 
 class CvReplayMessage;
 

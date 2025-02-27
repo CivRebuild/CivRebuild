@@ -771,9 +771,9 @@ protected:
 	std::vector<PlotExtraYield> m_aPlotExtraYields;
     std::vector<PlotExtraCost> m_aPlotExtraCosts;
     #if defined(__GNUC__)
-    std::unordered_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions;
+    std::unordered_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions; //PORT NEW
     #else
-    stdext::hash_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions;
+    stdext::hash_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions; //PORT OLD
     #endif
 	std::vector<EventTriggerTypes> m_aeInactiveTriggers;
 

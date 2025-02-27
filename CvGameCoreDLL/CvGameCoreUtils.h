@@ -5,11 +5,14 @@
 #ifndef CIV4_GAMECORE_UTILS_H
 #define CIV4_GAMECORE_UTILS_H
 
-
-//#include "CvStructs.h"
+#include "CvStructs.h"
 #include "CvGlobals.h"
+#include "CvSelectionGroup.h"
 #include "CvMap.h"
+#include "FAssert.h"
 
+
+#if not defined(__GNUC__)
 #ifndef _USRDLL
 // use non inline functions when not in the dll
 #define getMapINLINE	getMap
@@ -21,6 +24,7 @@
 #define getX_INLINE	getX
 #define getY_INLINE	getY
 
+#endif
 #endif
 
 class CvPlot;

@@ -6,6 +6,10 @@
 #define CIV4_GAME_H
 
 //#include "CvStructs.h"
+#include "CvDepends.h"
+#include "CvInfos.h"
+#include "FFreeListTrashArray.h"
+#include "CvArea.h"
 #include "CvDeal.h"
 #include "CvRandom.h"
 
@@ -633,8 +637,12 @@ protected:
 
 	std::vector<PlotExtraYield> m_aPlotExtraYields;
 	std::vector<PlotExtraCost> m_aPlotExtraCosts;
-	stdext::hash_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions;
-	std::vector<EventTriggerTypes> m_aeInactiveTriggers;
+    #if defined(__GNUC__)
+    std::unordered_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions; //PORT NEW
+    #else
+    stdext::hash_map<VoteSourceTypes, ReligionTypes> m_mapVoteSourceReligions; //PORT OLD
+    #endif
+    std::vector<EventTriggerTypes> m_aeInactiveTriggers;
 
 	// CACHE: cache frequently used values
 	int		m_iShrineBuildingCount;

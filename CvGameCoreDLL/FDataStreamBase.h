@@ -22,6 +22,9 @@
 //
 // Stream abstract base class
 //
+
+#include "CvDepends.h"
+
 class FDataStreamBase
 {
 public:

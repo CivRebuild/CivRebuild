@@ -6,7 +6,7 @@
 #define CIV4_PLAYER_AI_H
 
 #include "CvPlayer.h"
-#include "AI_defines.h"
+#include "AI_Defines.h"
 
 class CvEventTriggerInfo;
 
@@ -19,13 +19,14 @@ public:
 	virtual ~CvPlayerAI();
 
   // inlined for performance reasons
-#ifdef _USRDLL
-  static CvPlayerAI& getPlayer(PlayerTypes ePlayer) 
-  {
-	  FAssertMsg(ePlayer != NO_PLAYER, "Player is not assigned a valid value");
-	  FAssertMsg(ePlayer < MAX_PLAYERS, "Player is not assigned a valid value");
-	  return m_aPlayers[ePlayer]; 
-  }
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
+    static CvPlayerAI& getPlayer(PlayerTypes ePlayer)
+    {
+        FAssertMsg(ePlayer != NO_PLAYER, "Player is not assigned a valid value");
+        FAssertMsg(ePlayer < MAX_PLAYERS, "Player is not assigned a valid value");
+        return m_aPlayers[ePlayer];
+    }
 #endif
 	DllExport static CvPlayerAI& getPlayerNonInl(PlayerTypes ePlayer);
 
@@ -424,7 +425,8 @@ protected:
 };
 
 // helper for accessing static functions
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 #define GET_PLAYER CvPlayerAI::getPlayer
 #else
 #define GET_PLAYER CvPlayerAI::getPlayerNonInl

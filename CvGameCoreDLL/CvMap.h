@@ -15,6 +15,7 @@
 
 #include "CvArea.h"
 #include "CvPlot.h"
+#include "FFreeListTrashArray.h"
 
 
 class FAStar;
@@ -121,21 +122,24 @@ public:
 	bool findWater(CvPlot* pPlot, int iRange, bool bFreshWater);										// Exposed to Python
 
 	DllExport bool isPlot(int iX, int iY) const;																		// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int isPlotINLINE(int iX, int iY) const
 	{
 		return ((iX >= 0) && (iX < getGridWidthINLINE()) && (iY >= 0) && (iY < getGridHeightINLINE()));
 	}
 #endif
 	DllExport int numPlots() const; 																								// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int numPlotsINLINE() const
 	{
 		return getGridWidthINLINE() * getGridHeightINLINE();
 	}
 #endif
 	DllExport int plotNum(int iX, int iY) const;																		// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int plotNumINLINE(int iX, int iY) const
 	{
 		return ((iY * getGridWidthINLINE()) + iX);
@@ -157,14 +161,16 @@ public:
 	int maxStepDistance();																								// Exposed to Python
 
 	DllExport int getGridWidth() const;																		// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getGridWidthINLINE() const
 	{
 		return m_iGridWidth;
 	}
 #endif
 	DllExport int getGridHeight() const;																	// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getGridHeightINLINE() const
 	{
 		return m_iGridHeight;
@@ -183,21 +189,24 @@ public:
 	void incrementNextRiverID();																					// Exposed to Python
 
 	DllExport bool isWrapX();																							// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline bool isWrapXINLINE() const
 	{
 		return m_bWrapX;
 	}
 #endif
 	DllExport bool isWrapY();																							// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline bool isWrapYINLINE() const
 	{
 		return m_bWrapY;
 	}
 #endif
 	DllExport bool isWrap();
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline bool isWrapINLINE() const
 	{
 		return m_bWrapX || m_bWrapY;
@@ -217,14 +226,17 @@ public:
 	void changeNumBonusesOnLand(BonusTypes eIndex, int iChange);
 
 	DllExport CvPlot* plotByIndex(int iIndex) const;											// Exposed to Python
-#ifdef _USRDLL
+
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline CvPlot* plotByIndexINLINE(int iIndex) const
 	{
 		return (((iIndex >= 0) && (iIndex < (getGridWidthINLINE() * getGridHeightINLINE()))) ? &(m_pMapPlots[iIndex]) : NULL);
 	}
 #endif
 	DllExport CvPlot* plot(int iX, int iY) const;													// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	__forceinline CvPlot* plotINLINE(int iX, int iY) const
 	{
 		if ((iX == INVALID_PLOT_COORD) || (iY == INVALID_PLOT_COORD))

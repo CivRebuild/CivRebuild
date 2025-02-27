@@ -19,8 +19,8 @@ public:
 	virtual ~CvPlayerAI();
 
   // inlined for performance reasons
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	static CvPlayerAI& getPlayer(PlayerTypes ePlayer)
 	{
 		FAssertMsg(ePlayer != NO_PLAYER, "Player is not assigned a valid value");
@@ -629,8 +629,8 @@ protected:
 };
 
 // helper for accessing static functions
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 #define GET_PLAYER CvPlayerAI::getPlayer
 #else
 #define GET_PLAYER CvPlayerAI::getPlayerNonInl

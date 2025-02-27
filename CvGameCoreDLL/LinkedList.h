@@ -8,6 +8,10 @@
 #define		LINKEDLIST_H
 #pragma		once
 
+#include "CvDepends.h"
+#include "FDataStreamBase.h"
+
+
 template <class tVARTYPE> class CLinkList;
 
 

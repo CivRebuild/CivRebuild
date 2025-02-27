@@ -207,8 +207,8 @@ public:
 	DllExport CvInterface& getInterface();
 	DllExport CvInterface* getInterfacePtr();
 	DllExport int getMaxCivPlayers() const;
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	CvMap& getMapINLINE() { return *m_map; }				// inlined for perf reasons, do not use outside of dll
 	CvGameAI& getGameINLINE() { return *m_game; }			// inlined for perf reasons, do not use outside of dll
 #endif
@@ -1607,14 +1607,14 @@ inline CvGlobals& CvGlobals::getInstance()
 // helpers
 //
 #define GC CvGlobals::getInstance()
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifndef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifndef _USRDLL //PORT OLD
 #define gDLL GC.getDLLIFaceNonInl()
 #else
 #define gDLL GC.getDLLIFace()
 #endif
 
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #ifndef _USRDLL
 #define NUM_DIRECTION_TYPES (GC.getNumDirections())
 #define NUM_GAMEOPTION_TYPES (GC.getNumGameOptions())
