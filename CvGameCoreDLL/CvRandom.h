@@ -5,6 +5,11 @@
 #ifndef CIV4_RANDOM_H
 #define CIV4_RANDOM_H
 
+//#include "CvGameCoreDLL.h"
+#include "CvDepends.h"
+#include "FDataStreamBase.h"
+
+
 class CvRandom
 {
 
