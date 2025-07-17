@@ -5,7 +5,9 @@
 #ifndef CIV4_TEAM_AI_H
 #define CIV4_TEAM_AI_H
 
+//#include "CvGameCoreDLL.h"
 #include "CvTeam.h"
+#include "FAssert.h"
 
 class CvTeamAI : public CvTeam
 {
@@ -15,7 +17,8 @@ public:
 	CvTeamAI();
 	virtual ~CvTeamAI();
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL))
+//#ifdef _USRDLL
 	// inlined for performance reasons, only in the dll
 	static CvTeamAI& getTeam(TeamTypes eTeam)
 	{

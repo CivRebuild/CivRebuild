@@ -9,6 +9,7 @@
 #include "CvString.h"
 #include "FDataStreamBase.h"
 
+
 class CvTalkingHeadMessage
 {
 public:
