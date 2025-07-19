@@ -15,10 +15,10 @@
 #include "FDataStreamBase.h"
 
 
-#if defined(__GNUC__)
+#if defined(__GNUC__)  //PORT NEW
 typedef std::unordered_map< std::string, FVariable *>::const_iterator VSIteratorC;
 typedef std::unordered_map< std::string, FVariable *>::iterator VSIterator;
-#else
+#else  //PORT OLD
 typedef stdext::hash_map< std::string, FVariable *>::const_iterator VSIteratorC;
 typedef stdext::hash_map< std::string, FVariable *>::iterator VSIterator;
 #endif

@@ -2,11 +2,15 @@
 
 #ifndef CyUnit_h
 #define CyUnit_h
+
 //
 // Python wrapper class for CvUnit
 // 
 
-//#include "CvEnums.h"
+//#include "CvGameCoreDLL.h"
+#include "CvDepends.h"
+#include "CvEnums.h"
+
 
 class CyArea;
 class CyPlot;

@@ -32,6 +32,10 @@
 //
 //+++++++++++++++++++++++++
 
+//#include "CvGameCoreDLL.h"
+#include "CvDepends.h"
+
+
 class FInputDevice
 {
 public:

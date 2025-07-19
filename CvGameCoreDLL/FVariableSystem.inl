@@ -11,8 +11,17 @@
 //  Copyright (c) 2002-2004 Firaxis Games, Inc. All rights reserved.
 //------------------------------------------------------------------------------------------------
 
+#include "FVariableSystem.h"
+#include "FDataStreamBase.h"
+
+
+#if defined(__GNUC__)  //PORT NEW
+typedef std::unordered_map< std::string, FVariable *>::const_iterator VSIteratorC;
+typedef std::unordered_map< std::string, FVariable *>::iterator VSIterator;
+#else  //PORT OLD
 typedef stdext::hash_map< std::string, FVariable *>::const_iterator VSIteratorC;
 typedef stdext::hash_map< std::string, FVariable *>::iterator VSIterator;
+#endif
 
 //---------------------------------------------------------------------------------------
 // inline FVariable::~FVariable()
@@ -393,8 +402,10 @@ inline bool FVariableSystem::GetValue( const char * szVariable, float & fValue )
 			if (!GetValue(szVariable, szValue))
 			{
 				return false;
-			}
-			fValue = (float)_wtof(szValue);
+            }
+            //fValue = (float)_wtof(szValue); //PORT OLD
+            wchar * e;
+            fValue = (float)std::wcstod(szValue, &e); //PORT NEW
 		}
 		break;
 	default:
@@ -448,8 +459,10 @@ inline bool FVariableSystem::GetValue( const char * szVariable, double & dValue 
 			if (!GetValue(szVariable, szValue))
 			{
 				return false;
-			}
-			dValue = _wtof(szValue);
+            }
+            //dValue = _wtof(szValue); //PORT OLD
+            wchar * e;
+            dValue = std::wcstod(szValue, &e); //PORT NEW
 		}
 		break;
 	default:

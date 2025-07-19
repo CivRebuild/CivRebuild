@@ -15,6 +15,9 @@
 
 #ifndef		FASTARNODE_H
 #define		FASTARNODE_H
+
+#include <stddef.h>
+
 #pragma		once
 
 #define ASNL_ADDOPEN			0

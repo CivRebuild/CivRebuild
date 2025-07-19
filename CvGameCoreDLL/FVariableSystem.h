@@ -15,6 +15,10 @@
 #define		FVARIABLESYSTEM_H
 #pragma		once
 
+//#include "CvGameCoreDLL.h"
+#include "CvDepends.h"
+
+
 //! Represents the different types of data an FVariable can represent.
 enum eVariableType
 {
@@ -34,7 +38,11 @@ enum eVariableType
 
 class FVariable;
 
-typedef stdext::hash_map< std::string, FVariable * > FVariableHash;
+#if defined(__GNUC__) //PORT NEW
+    typedef std::unordered_map< std::string, FVariable * > FVariableHash;
+#else //PORT OLD
+    typedef stdext::hash_map< std::string, FVariable * > FVariableHash;
+#endif
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // CLASS:	FVariable
