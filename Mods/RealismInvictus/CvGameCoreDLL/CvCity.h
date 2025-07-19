@@ -309,16 +309,16 @@ public:
 	void setID(int iID);
 
 	DllExport int getX() const;																			// Exposed to Python
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getX_INLINE() const
 	{
 		return m_iX;
 	}
 #endif
 	DllExport int getY() const;																			// Exposed to Python
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getY_INLINE() const
 	{
 		return m_iY;
@@ -729,8 +729,8 @@ public:
 	void setPlundered(bool bNewValue);											// Exposed to Python
 
 	DllExport PlayerTypes getOwner() const;										// Exposed to Python
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline PlayerTypes getOwnerINLINE() const
 	{
 		return m_eOwner;

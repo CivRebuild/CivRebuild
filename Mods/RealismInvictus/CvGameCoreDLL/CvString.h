@@ -7,7 +7,7 @@
 //#include "CvGameCoreDLL.h"
 #include "CvDepends.h"
 
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #pragma warning( disable: 4251 )		// needs to have dll-interface to be used by clients of class
 #endif
 
@@ -31,7 +31,7 @@ public:
 	CvWString(const wchar* s) { if (s) *this = s; }
 //	CvWString(const __wchar_t* s) { if (s) *this = s; }
 	CvWString(const std::wstring& s) { assign(s.c_str()); }
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #ifndef _USRDLL
 	// FString conversion, if not in the DLL
 	CvWString(const FStringA& s) { Copy(s.GetCString()); }
@@ -48,9 +48,9 @@ public:
 			if (iLen)
 			{
                 wchar *w = new wchar[iLen+1];
-                #if defined(__GNUC__)
+                #if defined(__GNUC__) //PORT NEW
                 wprintf(w, L"%S", s);	// convert
-                #else
+                #else //PORT OLD
                 swprintf(w, L"%S", s);	// convert
                 #endif
                 assign(w);
@@ -73,7 +73,7 @@ public:
 	const CvWString& operator=( const std::wstring& s) { assign(s.c_str());	return *this; }	
 	const CvWString& operator=( const std::string& w) { Copy(w.c_str());	return *this; }	
 	const CvWString& operator=( const CvWString& w) { assign(w.c_str());	return *this; }	
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #ifndef _USRDLL
 	// FString conversion, if not in the DLL
 	const CvWString& operator=( const FStringW& s) { assign(s.GetCString());	return *this; }	
@@ -326,9 +326,9 @@ inline bool CvString::formatv(std::string & out, const char * fmt, va_list args)
 	do
 	{
 		int maxlen = 2047+2048*attempts;
-        #if defined(__GNUC__)
+        #if defined(__GNUC__) //PORT NEW
         len = vsnprintf(pbuf,maxlen,fmt,args);
-        #else
+        #else //PORT OLD
         len = _vsnprintf(pbuf,maxlen,fmt,args);
         #endif
 		attempts++;
@@ -373,9 +373,9 @@ inline bool CvWString::formatv(std::wstring & out, const wchar * fmt, va_list ar
 	do
 	{
 		int maxlen = 2047+2048*attempts;
-        #if defined(__GNUC__)
+        #if defined(__GNUC__) //PORT NEW
         len = vswprintf(pbuf,maxlen,fmt,args);
-        #else
+        #else //PORT OLD
         len = _vsnwprintf(pbuf,maxlen,fmt,args);
         #endif
 		attempts++;

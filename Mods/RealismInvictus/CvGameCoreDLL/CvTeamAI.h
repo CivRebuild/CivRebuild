@@ -17,8 +17,8 @@ public:
 	CvTeamAI();
 	virtual ~CvTeamAI();
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	// inlined for performance reasons, only in the dll
 	static CvTeamAI& getTeam(TeamTypes eTeam)
 	{
@@ -275,8 +275,8 @@ protected:
 };
 
 // helper for accessing static functions
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 #define GET_TEAM CvTeamAI::getTeam
 #else
 #define GET_TEAM CvTeamAI::getTeamNonInl

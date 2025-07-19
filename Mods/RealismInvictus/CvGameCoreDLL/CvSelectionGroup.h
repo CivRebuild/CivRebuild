@@ -171,8 +171,8 @@ public:
 	// void doForceUpdate(); // K-Mod. (disabled. force update doesn't work the same way anymore.)
 
 	PlayerTypes getOwner() const;																															// Exposed to Python
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline PlayerTypes getOwnerINLINE() const
 	{
 		return m_eOwner;

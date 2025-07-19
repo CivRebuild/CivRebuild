@@ -19,8 +19,9 @@
 #include "CvInfos.h"
 #include "LinkedList.h"
 
-
+#if not defined(__GNUC__) //PORT NEW
 #pragma warning( disable: 4251 )	// needs to have dll-interface to be used by clients of class
+#endif
 
 class CvCity;
 class CvDeal;

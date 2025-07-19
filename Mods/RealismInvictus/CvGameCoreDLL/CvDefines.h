@@ -54,8 +54,8 @@
 #define RANDPLOT_NOT_VISIBLE_TO_CIV						(0x00000020)
 #define RANDPLOT_NOT_CITY											(0x00000040)
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL))//PORT NEW
+//#ifdef _USRDLL //PORT OLD
 // MOD - START - Increased Player Limit
 //#define MAX_CIV_PLAYERS												(18)
 #define MAX_CIV_PLAYERS												(77)

@@ -122,7 +122,8 @@ public:
 	void setForceUpdate(bool bNewValue);
 
 	DllExport PlayerTypes getOwner() const;																															// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline PlayerTypes getOwnerINLINE() const
 	{
 		return m_eOwner;

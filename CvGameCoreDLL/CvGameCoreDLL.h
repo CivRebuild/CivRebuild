@@ -66,10 +66,12 @@ namespace python = boost::python;
 #include "CvSelectionGroupAI.h"
 #include "CvUnitAI.h"
 
+#if not defined(__GNUC__) //PORT NEW
 #ifdef FINAL_RELEASE
 // Undefine OutputDebugString in final release builds
 #undef OutputDebugString
 #define OutputDebugString(x)
 #endif //FINAL_RELEASE
+#endif //OS Select
 
 #endif	// CvGameCoreDLL_h

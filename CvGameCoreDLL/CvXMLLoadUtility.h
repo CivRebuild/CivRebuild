@@ -162,14 +162,16 @@ public:
 	//	and then gets that node's boolean value
 	bool GetChildXmlVal(bool* pbVal, bool bDefault = false);
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	FXml* GetXML() { return m_pFXml; }
 #endif
 
 	// loads the local yield from the xml file
 	int SetYields(int** ppiYield);
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	int SetCommerce(T** ppiCommerce);
 #endif
@@ -183,7 +185,8 @@ public:
 	// is found if one is found
 	static int FindInInfoClass(const TCHAR* pszVal, bool hideAssert = false);
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	void InitList(T **ppList, int iListLen, T val = 0);
 #endif
@@ -274,7 +277,8 @@ private:
 
 	void SetGlobalUnitScales(float* pfLargeScale, float* pfSmallScale, char* szTagName);
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 		void SetGlobalDefine(const char* szDefineName, T*& piDefVal)
 	{ GC.getDefinesVarSystem()->GetValue(szDefineName, piDefVal); }
@@ -282,8 +286,9 @@ private:
 	//
 	// template which can handle all info classes
 	//
-	// a dynamic value for the list size
-#ifdef _USRDLL
+    // a dynamic value for the list size
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	void SetGlobalClassInfo(std::vector<T*>& aInfos, const char* szTagName, bool bTwoPass);
 	template <class T>
@@ -302,11 +307,13 @@ private:
 	// create a keyboard string from a KB code, Delete would be returned for KB_DELETE
 	CvWString CreateKeyStringFromKBCode(const TCHAR* pszHotKey);
 
-	void orderHotkeyInfo(int** ppiSortedIndex, int* pHotkeyIndex, int iLength);
-	void logMsg(char* format, ... );
+    void orderHotkeyInfo(int** ppiSortedIndex, int* pHotkeyIndex, int iLength);
+    //void logMsg(char* format, ... ); //PORT OLD
+    void logMsg(const char* format, ... ); //PORT NEW
 };
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 //
 /////////////////////////// inlines / templates
 //

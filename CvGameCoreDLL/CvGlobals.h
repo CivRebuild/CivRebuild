@@ -955,9 +955,9 @@ protected:
 	************************************************************************************************************************/
 
     // all type strings are upper case and are kept in this hash map for fast lookup, Moose
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
     typedef std::unordered_map<std::string /* type string */, int /* info index */> InfosMap;
-#else
+#else //PORT OLD
     typedef stdext::hash_map<std::string /* type string */, int /* info index */> InfosMap;
 #endif
 	InfosMap m_infosMap;
@@ -1075,9 +1075,9 @@ protected:
 	//////////////////////////////////////////////////////////////////////////
 
     // all type strings are upper case and are kept in this hash map for fast lookup, Moose
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
     typedef std::unordered_map<std::string /* type string */, int /*enum value */> TypesMap;
-#else
+#else //PORT OLD
     typedef stdext::hash_map<std::string /* type string */, int /*enum value */> TypesMap;
 #endif
 	TypesMap m_typesMap;

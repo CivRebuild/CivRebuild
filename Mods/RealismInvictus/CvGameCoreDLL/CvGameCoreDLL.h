@@ -7,7 +7,7 @@
 void startProfilingDLL(bool longLived);
 void stopProfilingDLL(bool longLived);
 
-#if not defined(__GNUC__) // windows memory manager //PORT OLD
+#if not defined(__GNUC__) // windows memory manager //PORT NEW
 #ifdef USE_INTERNAL_PROFILER
 struct ProfileSample;
 void IFPBeginSample(ProfileSample* sample);
@@ -132,7 +132,7 @@ namespace python = boost::python;
 // MOD - END - Tech Graph
 
 
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #ifdef FINAL_RELEASE
 // Undefine OutputDebugString in final release builds
 #undef OutputDebugString

@@ -12,7 +12,7 @@
 #include "FAssert.h"
 
 
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #ifndef _USRDLL
 // use non inline functions when not in the dll
 #define getMapINLINE	getMap

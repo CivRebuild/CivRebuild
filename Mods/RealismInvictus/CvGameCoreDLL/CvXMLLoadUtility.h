@@ -167,16 +167,16 @@ public:
 	//	and then gets that node's boolean value
 	bool GetChildXmlVal(bool* pbVal, bool bDefault = false);
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	FXml* GetXML() { return m_pFXml; }
 #endif
 
 	// loads the local yield from the xml file
 	int SetYields(int** ppiYield);
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	int SetCommerce(T** ppiCommerce);
 #endif
@@ -208,8 +208,8 @@ public:
 	// is found if one is found
 	static int FindInInfoClass(const TCHAR* pszVal, bool hideAssert = false);
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	void InitList(T **ppList, int iListLen, T val = 0);
 #endif
@@ -307,8 +307,8 @@ private:
 
 	void SetGlobalUnitScales(float* pfLargeScale, float* pfSmallScale, char* szTagName);
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 		void SetGlobalDefine(const char* szDefineName, T*& piDefVal)
 	{ GC.getDefinesVarSystem()->GetValue(szDefineName, piDefVal); }
@@ -317,8 +317,8 @@ private:
 	// template which can handle all info classes
 	//
 	// a dynamic value for the list size
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	template <class T>
 	void SetGlobalClassInfo(std::vector<T*>& aInfos, const char* szTagName, bool bTwoPass);
 	template <class T>
@@ -343,8 +343,8 @@ private:
     void logMsg(const char* format, ... ); //PORT NEW
 };
 
-#if (defined(__GNUC__) || defined(_USRDLL))
-//#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 //
 /////////////////////////// inlines / templates
 //

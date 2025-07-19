@@ -23,7 +23,8 @@
 #define RANDPLOT_NOT_VISIBLE_TO_CIV						(0x00000020)
 #define RANDPLOT_NOT_CITY											(0x00000040)
 
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL))//PORT NEW
+//#ifdef _USRDLL //PORT OLD
 #define MAX_CIV_PLAYERS												(18)
 #else
 #define MAX_CIV_PLAYERS												(CvGlobals::getInstance().getMaxCivPlayers())

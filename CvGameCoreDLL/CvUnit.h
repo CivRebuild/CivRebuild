@@ -9,7 +9,7 @@
 #include "CvEnums.h"
 #include "CvStructs.h"
 
-#if not defined(__GNUC__)
+#if not defined(__GNUC__) //PORT NEW
 #pragma warning( disable: 4251 )		// needs to have dll-interface to be used by clients of class
 #endif
 
@@ -433,14 +433,16 @@ public:
 	void setHotKeyNumber(int iNewValue);																											// Exposed to Python
 
 	DllExport int getX() const;																																// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getX_INLINE() const
 	{
 		return m_iX;
 	}
 #endif
 	DllExport int getY() const;																																// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline int getY_INLINE() const
 	{
 		return m_iY;
@@ -640,7 +642,8 @@ public:
 	void collectBlockadeGold();
 
 	DllExport PlayerTypes getOwner() const;																									// Exposed to Python
-#ifdef _USRDLL
+#if (defined(__GNUC__) || defined(_USRDLL)) //PORT NEW
+//#ifdef _USRDLL //PORT OLD
 	inline PlayerTypes getOwnerINLINE() const
 	{
 		return m_eOwner;

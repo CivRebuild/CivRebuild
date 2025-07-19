@@ -948,7 +948,7 @@ public:
 	inline bool getUSE_UNIT_UPGRADE_PRICE_CALLBACK() { return m_bUSE_UNIT_UPGRADE_PRICE_CALLBACK; }
 	inline bool getUSE_DO_COMBAT_CALLBACK() { return m_bUSE_DO_COMBAT_CALLBACK; }
 
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
     // TO DOO - need detect press keys in linux!!!
     // more reliable versions of the 'gDLL->xxxKey' functions:
     inline bool altKey() { return (false & 0x8000); }
@@ -960,7 +960,7 @@ public:
     // NOTE: I've replaced all calls to the gDLL key functions with calls to these functions.
 
     inline bool suppressCycling() { return (false & 0x8000); } // hold X to temporarily suppress automatic unit cycling.
-#else
+#else //PORT OLD
     // more reliable versions of the 'gDLL->xxxKey' functions:
 	inline bool altKey() { return (GetKeyState(VK_MENU) & 0x8000); }
 	inline bool ctrlKey() { return (GetKeyState(VK_CONTROL) & 0x8000); }
@@ -1159,9 +1159,9 @@ protected:
 	************************************************************************************************************************/
 
 	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
     typedef std::unordered_map<std::string /* type string */, int /* info index */> InfosMap;
-#else
+#else //PORT OLD
     typedef stdext::hash_map<std::string /* type string */, int /* info index */> InfosMap;
 #endif
 	InfosMap m_infosMap;
@@ -1330,9 +1330,9 @@ protected:
 	//////////////////////////////////////////////////////////////////////////
 
 	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
-#if defined(__GNUC__)
+#if defined(__GNUC__) //PORT NEW
     typedef std::unordered_map<std::string /* type string */, int /*enum value */> TypesMap;
-#else
+#else //PORT OLD
     typedef stdext::hash_map<std::string /* type string */, int /*enum value */> TypesMap;
 #endif
 	TypesMap m_typesMap;
